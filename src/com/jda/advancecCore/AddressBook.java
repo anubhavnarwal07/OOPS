@@ -54,35 +54,37 @@ public class AddressBook {
 	}
 
 	public List<Person>  editField(List<Person> person) {
-		 String name;
 		System.out.println("Enter the name of the user ");
-		name = Utility.getString();
+		 String name = Utility.getString();
 		for (Person p : person) {
 			if (p.getname().equals(name)) {
 				System.out.println(
 				      "Enter 1 to change phone number , 2 to change Address, 3 to change the city and 4 to change the state");
 				int input = Utility.getInt();
+				Utility.getString();
 				switch (input) {
 				case 1: {
 					System.out.println("Please enter the new phone number");
 					int num = Utility.getInt();
 					p.setphoneNumber(num);
+					break;
 				}
 				case 2: {
 					System.out.println("Please enter the new address");
 					String str = Utility.getString();
 					p.setaddress(str);
+					break;
 				}
 				case 3: {
 					System.out.println("Please enter the new city");
 					String str = Utility.getString();
 					p.setcity(str);
-				}
+				break;}
 				case 4: {
 					System.out.println("Please enter the new state");
 					String str = Utility.getString();
 					p.setstate(str);
-				}
+				break;}
 			}
 		}
 	} return person;
